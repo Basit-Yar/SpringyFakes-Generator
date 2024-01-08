@@ -1,6 +1,6 @@
 package com.example.fakerdemo.Controller;
 
-import com.example.fakerdemo.Service.FakeDataSevice;
+import com.example.fakerdemo.Service.FakeDataService;
 import com.example.fakerdemo.model.Item;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class FakeDataController {
 
     @Autowired
-    FakeDataSevice fakeDataSevice;
+    FakeDataService fakeDataSevice;
 
     @GetMapping("/fake-items")
     public ResponseEntity<Item> getFakePerson() {
