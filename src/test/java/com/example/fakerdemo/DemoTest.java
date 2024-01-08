@@ -9,6 +9,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 
 import java.time.LocalDateTime;
 import java.time.ZonedDateTime;
+import java.util.List;
 
 @SpringBootTest
 public class DemoTest {
@@ -29,6 +30,9 @@ public class DemoTest {
 
 //        LocalDateTime date = fakeDataService.dateTimeFormatter();
 //        System.out.println(date);
+
+        List<Item> items = fakeDataService.generateMockDataList(5);
+        System.out.println(items);
 
     }
 }

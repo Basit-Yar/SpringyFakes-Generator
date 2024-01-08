@@ -11,6 +11,8 @@ import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
 
 
 @Service
@@ -18,6 +20,16 @@ public class FakeDataService {
 
     @Autowired
     Faker faker;
+
+    public List<Item> generateMockDataList(int limit){
+        List<Item> items = new ArrayList<>();
+
+        for(int i=0; i<limit; i++){
+            Item item = generateFakeData();
+            items.add(item);
+        }
+        return items;
+    }
     public Item generateFakeData() {
         Item item = new Item();
 
@@ -87,6 +99,11 @@ public class FakeDataService {
         return item;
     }
 
+    public List<Item> setItemFields(){
+
+
+        return null;
+    }
 
     public LocalDateTime dateTimeFormatter(){
 
