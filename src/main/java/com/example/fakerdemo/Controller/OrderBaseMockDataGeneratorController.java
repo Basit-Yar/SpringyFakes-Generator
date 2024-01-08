@@ -1,7 +1,7 @@
 package com.example.fakerdemo.Controller;
 
-import com.example.fakerdemo.Service.FakeDataService;
-import com.example.fakerdemo.model.Item;
+import com.example.fakerdemo.Service.OrderBaseService;
+import com.example.fakerdemo.model.OrderBase;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -13,14 +13,14 @@ import java.util.List;
 
 
 @RestController
-public class FakeDataController {
+public class OrderBaseMockDataGeneratorController {
 
     @Autowired
-    FakeDataService fakeDataService;
+    OrderBaseService orderBaseService;
 
     @GetMapping("/order-base")
-    public ResponseEntity<List<Item>> getFakePerson(@RequestParam int limit) {
-        List<Item> items = fakeDataService.generateMockDataList(limit);
-        return new ResponseEntity<>(items, HttpStatus.OK);
+    public ResponseEntity<List<OrderBase>> getFakePerson(@RequestParam(defaultValue = "10") int limit) {
+        List<OrderBase> orderBases = orderBaseService.generateMockDataList(limit);
+        return new ResponseEntity<>(orderBases, HttpStatus.OK);
     }
 }

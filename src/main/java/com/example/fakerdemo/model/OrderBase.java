@@ -1,18 +1,14 @@
 package com.example.fakerdemo.model;
 
 
-import com.example.fakerdemo.model.DateClass.DateClass;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.time.LocalDateTime;
-import java.time.ZonedDateTime;
-
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class Item {
+public class OrderBase {
     private String orderBaseXid;
     private String paymentMethodCodeGid;
     private String incoTermGid;
@@ -53,11 +49,11 @@ public class Item {
     private Double attributeNumber2;
     private Double attributeNumber10;
 
-    private DateClass attributeDate1;
+    private CustomDateTime attributeDate1;
 
     private Currency attributeCurrency3;
 
-    private DateClass insertDate;
-    private DateClass updateDate;
+    private CustomDateTime insertDate;
+    private CustomDateTime updateDate;
 
 }
